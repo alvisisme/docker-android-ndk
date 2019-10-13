@@ -11,7 +11,7 @@ r13b:
   variables:
     VERSION: r13b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION -f $VERSION/Dockerfile $VERSION
+    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
     - docker push alvisisme/android-ndk:$VERSION
   only:
     - master
