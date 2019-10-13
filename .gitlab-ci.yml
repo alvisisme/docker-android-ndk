@@ -4,15 +4,15 @@ services:
   - docker:18.09.9-dind
   
 before_script:
-  - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin
+  - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
 
 r10e:
   stage: build
   variables:
     VERSION: r10e
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -21,8 +21,8 @@ r11c:
   variables:
     VERSION: r11c
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -31,8 +31,8 @@ r12b:
   variables:
     VERSION: r12b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -41,8 +41,8 @@ r13b:
   variables:
     VERSION: r13b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -51,8 +51,8 @@ r14b:
   variables:
     VERSION: r14b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -61,8 +61,8 @@ r15c:
   variables:
     VERSION: r15c
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -71,8 +71,8 @@ r16b:
   variables:
     VERSION: r16b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -81,8 +81,8 @@ r17c:
   variables:
     VERSION: r17c
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -91,8 +91,8 @@ r18b:
   variables:
     VERSION: r18b
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
 
@@ -101,7 +101,7 @@ r19c:
   variables:
     VERSION: r19c
   script:
-    - docker build --pull -t alvisisme/android-ndk:$VERSION --build-arg ANDROID_NDK_VERSION=$VERSION .
-    - docker push alvisisme/android-ndk:$VERSION
+    - docker build --pull -t "$CI_REGISTRY/alvisisme/android-ndk:$VERSION" --build-arg ANDROID_NDK_VERSION=$VERSION .
+    - docker push "$CI_REGISTRY/alvisisme/android-ndk:$VERSION"
   only:
     - master
