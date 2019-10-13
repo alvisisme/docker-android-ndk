@@ -1,4 +1,4 @@
-﻿image: docker:18.09.9
+image: docker:18.09.9
 
 services:
   - docker:18.09.9-dind
@@ -6,7 +6,7 @@ services:
 before_script:
   - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin
 
-ndk-r13b:
+r13b:
   stage: build
   variables:
     VERSION: r13b
