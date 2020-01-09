@@ -1,21 +1,28 @@
 language: shell
+os: linux
+arch: amd64
+dist: bionic
 
-services:
-  - docker
-
-env:
-- NDK_VERSION=r10e
-- NDK_VERSION=r11c
-- NDK_VERSION=r12b
+services: docker
 
 branches:
   only:
-  - master
+    - master
 
-jobs:
-  include:
-    - stage: build
-      script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker build --pull -t alvisisme/android-ndk:$NDK_VERSION --build-arg ANDROID_NDK_VERSION=$NDK_VERSION .
-        - docker push alvisisme/android-ndk:$NDK_VERSION
+env:
+  - NDK_VERSION=r10b
+  - NDK_VERSION=r11c
+  - NDK_VERSION=r12b
+  - NDK_VERSION=r13b
+  - NDK_VERSION=r14b
+  - NDK_VERSION=r15c
+  - NDK_VERSION=r16b
+  - NDK_VERSION=r17c
+  - NDK_VERSION=r18b
+  - NDK_VERSION=r19c
+  - NDK_VERSION=r20b
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build --pull -t alvisisme/android-ndk:$NDK_VERSION --build-arg ANDROID_NDK_VERSION=$NDK_VERSION .
+  - docker push alvisisme/android-ndk:$NDK_VERSION
