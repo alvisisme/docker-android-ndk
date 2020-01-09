@@ -1,6 +1,9 @@
 services:
   - docker
 
+rvm:
+  - 2.5
+
 env:
 - NDK_VERSION=r10e
 - NDK_VERSION=r11c
