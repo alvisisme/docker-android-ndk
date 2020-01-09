@@ -1,0 +1,33 @@
+services:
+  - docker
+
+branches:
+  only:
+  - master
+
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+script:
+  - docker build --pull -t alvisisme/android-ndk:r10e --build-arg ANDROID_NDK_VERSION=r10e .
+  - docker push alvisisme/android-ndk:r10e
+  - docker build --pull -t alvisisme/android-ndk:r11c --build-arg ANDROID_NDK_VERSION=r11c .
+  - docker push alvisisme/android-ndk:r11c
+  - docker build --pull -t alvisisme/android-ndk:r12b --build-arg ANDROID_NDK_VERSION=r12b .
+  - docker push alvisisme/android-ndk:r12b
+  - docker build --pull -t alvisisme/android-ndk:r13b --build-arg ANDROID_NDK_VERSION=r13b .
+  - docker push alvisisme/android-ndk:r13b
+  - docker build --pull -t alvisisme/android-ndk:r14b --build-arg ANDROID_NDK_VERSION=r14b .
+  - docker push alvisisme/android-ndk:r14b
+  - docker build --pull -t alvisisme/android-ndk:r15c --build-arg ANDROID_NDK_VERSION=r15c .
+  - docker push alvisisme/android-ndk:r15c
+  - docker build --pull -t alvisisme/android-ndk:r16b --build-arg ANDROID_NDK_VERSION=r16b .
+  - docker push alvisisme/android-ndk:r16b
+  - docker build --pull -t alvisisme/android-ndk:r17c --build-arg ANDROID_NDK_VERSION=r17c .
+  - docker push alvisisme/android-ndk:r17c
+  - docker build --pull -t alvisisme/android-ndk:r18b --build-arg ANDROID_NDK_VERSION=r18b .
+  - docker push alvisisme/android-ndk:r18b
+  - docker build --pull -t alvisisme/android-ndk:r19c --build-arg ANDROID_NDK_VERSION=r19c .
+  - docker push alvisisme/android-ndk:r19c
+  - docker build --pull -t alvisisme/android-ndk:r20b --build-arg ANDROID_NDK_VERSION=r20b .
+  - docker push alvisisme/android-ndk:r20b
