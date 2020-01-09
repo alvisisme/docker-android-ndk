@@ -1,6 +1,6 @@
 # docker-android-ndk
 
-[![Build Status](https://travis-ci.com/alvisisme/docker-android-ndk.svg?branch=master)](https://travis-ci.com/alvisisme/docker-android-ndk)
+![Build Status](https://travis-ci.com/alvisisme/docker-android-ndk.svg?branch=master)
 ![https://cloud.docker.com/repository/docker/alvisisme/android-ndk](https://img.shields.io/docker/pulls/alvisisme/android-ndk.svg)
 
 Android NDK Docker镜像
