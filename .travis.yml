@@ -24,6 +24,5 @@ env:
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - echo $NDK_VERSION
   - docker build --pull -t alvisisme/android-ndk:$NDK_VERSION --build-arg ANDROID_NDK_VERSION=$NDK_VERSION .
   - docker push alvisisme/android-ndk:$NDK_VERSION
