@@ -1,4 +1,4 @@
-﻿FROM ubuntu:18.04
+﻿FROM alvisisme/ubuntu:18.04
 
 RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt-get -y install \
@@ -12,6 +12,6 @@ ARG ANDROID_NDK_VERSION
 ENV ANDROID_NDK_HOME /android-ndk-${ANDROID_NDK_VERSION}
 ENV PATH ${ANDROID_NDK_HOME}:${PATH}
 
-RUN wget -q https://dl.google.com/android/repository/android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
+RUN wget -q http://nexus3.alvisisme.site/repository/android-ndk/android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
   unzip -q android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
   rm android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip
