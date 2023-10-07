@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  android-ndk:r9d:
+  r9d:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -23,7 +23,7 @@ jobs:
       - name: Push the android-ndk:r9d Docker image
         run: docker push alvisisme/android-ndk:r9d && docker rmi alvisisme/android-ndk:r9d
 
-  android-ndk:r10e:
+  r10e:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -38,7 +38,7 @@ jobs:
       - name: Push the android-ndk:r10e Docker image
         run: docker push alvisisme/android-ndk:r10e && docker rmi alvisisme/android-ndk:r10e
 
-  android-ndk:r11c:
+  r11c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -53,7 +53,7 @@ jobs:
       - name: Push the android-ndk:r11c Docker image
         run: docker push alvisisme/android-ndk:r11c && docker rmi alvisisme/android-ndk:r11c
 
-  android-ndk:r12b:
+  r12b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -68,7 +68,7 @@ jobs:
       - name: Push the android-ndk:r12b Docker image
         run: docker push alvisisme/android-ndk:r12b && docker rmi alvisisme/android-ndk:r12b
         
-  android-ndk:r13b:
+  r13b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -83,7 +83,7 @@ jobs:
       - name: Push the android-ndk:r13b Docker image
         run: docker push alvisisme/android-ndk:r13b && docker rmi alvisisme/android-ndk:r13b
 
-  android-ndk:r14b:
+  r14b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -98,7 +98,7 @@ jobs:
       - name: Push the android-ndk:r14b Docker image
         run: docker push alvisisme/android-ndk:r14b && docker rmi alvisisme/android-ndk:r14b
                       
-  android-ndk:r15c:
+  r15c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -113,7 +113,7 @@ jobs:
       - name: Push the android-ndk:r15c Docker image
         run: docker push alvisisme/android-ndk:r15c && docker rmi alvisisme/android-ndk:r15c
 
-  android-ndk:r16b:
+  r16b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -128,7 +128,7 @@ jobs:
       - name: Push the android-ndk:r16b Docker image
         run: docker push alvisisme/android-ndk:r16b && docker rmi alvisisme/android-ndk:r16b
 
-  android-ndk:r17c:
+  r17c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -143,7 +143,7 @@ jobs:
       - name: Push the android-ndk:r17c Docker image
         run: docker push alvisisme/android-ndk:r17c && docker rmi alvisisme/android-ndk:r17c
 
-  android-ndk:r18b:
+  r18b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -158,7 +158,7 @@ jobs:
       - name: Push the android-ndk:r18b Docker image
         run: docker push alvisisme/android-ndk:r18b && docker rmi alvisisme/android-ndk:r18b
         
-  android-ndk:r19c:
+  r19c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -173,7 +173,7 @@ jobs:
       - name: Push the android-ndk:r19c Docker image
         run: docker push alvisisme/android-ndk:r19c && docker rmi alvisisme/android-ndk:r19c
 
-  android-ndk:r20b:
+  r20b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -188,7 +188,7 @@ jobs:
       - name: Push the android-ndk:r20b Docker image
         run: docker push alvisisme/android-ndk:r20b && docker rmi alvisisme/android-ndk:r20b
 
-  android-ndk:r21e:
+  r21e:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -203,7 +203,7 @@ jobs:
       - name: Push the android-ndk:r21e Docker image
         run: docker push alvisisme/android-ndk:r21e && docker rmi alvisisme/android-ndk:r21e
         
-  android-ndk:r22b:
+  r22b:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -218,7 +218,7 @@ jobs:
       - name: Push the android-ndk:r22b Docker image
         run: docker push alvisisme/android-ndk:r22b && docker rmi alvisisme/android-ndk:r22b
                 
-  android-ndk:r23c:
+  r23c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -233,7 +233,7 @@ jobs:
       - name: Push the android-ndk:r23c Docker image
         run: docker push alvisisme/android-ndk:r23c && docker rmi alvisisme/android-ndk:r23c
                         
-  android-ndk:r24:
+  r24:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -248,7 +248,7 @@ jobs:
       - name: Push the android-ndk:r24 Docker image
         run: docker push alvisisme/android-ndk:r24 && docker rmi alvisisme/android-ndk:r24
                         
-  android-ndk:r25c:
+  r25c:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
