@@ -1,0 +1,125 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build the android-ndk:r9d Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r9d" . --file Dockerfile.r9d --tag alvisisme/android-ndk:r9d
+
+      - name: Push the android-ndk:r9d Docker image
+        run: docker push alvisisme/android-ndk:r9d
+
+      - name: Build the android-ndk:r10e Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r10e" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r10e
+
+      - name: Push the android-ndk:r10e Docker image
+        run: docker push alvisisme/android-ndk:r10e
+
+      - name: Build the android-ndk:r11c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r11c" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r11c
+
+      - name: Push the android-ndk:r11c Docker image
+        run: docker push alvisisme/android-ndk:r11c
+
+      - name: Build the android-ndk:r12b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r12b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r12b
+
+      - name: Push the android-ndk:r12b Docker image
+        run: docker push alvisisme/android-ndk:r12b
+        
+      - name: Build the android-ndk:r13b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r13b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r13b
+
+      - name: Push the android-ndk:r13b Docker image
+        run: docker push alvisisme/android-ndk:r13b
+              
+      - name: Build the android-ndk:r14b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r14b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r14b
+
+      - name: Push the android-ndk:r14b Docker image
+        run: docker push alvisisme/android-ndk:r14b
+                      
+      - name: Build the android-ndk:r15c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r15c" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r15c
+
+      - name: Push the android-ndk:r15c Docker image
+        run: docker push alvisisme/android-ndk:r15c
+                              
+      - name: Build the android-ndk:r16b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r16b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r16b
+
+      - name: Push the android-ndk:r16b Docker image
+        run: docker push alvisisme/android-ndk:r16b
+
+      - name: Build the android-ndk:r17c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r17c" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r17c
+
+      - name: Push the android-ndk:r17c Docker image
+        run: docker push alvisisme/android-ndk:r17c
+
+      - name: Build the android-ndk:r18b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r18b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r18b
+
+      - name: Push the android-ndk:r18b Docker image
+        run: docker push alvisisme/android-ndk:r18b
+        
+      - name: Build the android-ndk:r19c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r19c" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r19c
+
+      - name: Push the android-ndk:r19c Docker image
+        run: docker push alvisisme/android-ndk:r19c
+
+      - name: Build the android-ndk:r20b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r20b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r20b
+
+      - name: Push the android-ndk:r20b Docker image
+        run: docker push alvisisme/android-ndk:r20b
+
+      - name: Build the android-ndk:r21e Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r21e" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r21e
+
+      - name: Push the android-ndk:r21e Docker image
+        run: docker push alvisisme/android-ndk:r21e
+        
+      - name: Build the android-ndk:r22b Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r22b" . --file Dockerfile.r10e-r22b --tag alvisisme/android-ndk:r22b
+
+      - name: Push the android-ndk:r22b Docker image
+        run: docker push alvisisme/android-ndk:r22b
+                
+      - name: Build the android-ndk:r23c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r23c" . --file Dockerfile.r23c-25c --tag alvisisme/android-ndk:r23c
+
+      - name: Push the android-ndk:r23c Docker image
+        run: docker push alvisisme/android-ndk:r23c
+                        
+      - name: Build the android-ndk:r24 Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r24" . --file Dockerfile.r23c-25c --tag alvisisme/android-ndk:r24
+
+      - name: Push the android-ndk:r24 Docker image
+        run: docker push alvisisme/android-ndk:r24
+                        
+      - name: Build the android-ndk:r25c Docker image
+        run: docker build --build-arg="ANDROID_NDK_VERSION=r25c" . --file Dockerfile.r23c-25c --tag alvisisme/android-ndk:r25c
+
+      - name: Push the android-ndk:r25c Docker image
+        run: docker push alvisisme/android-ndk:r25c
