@@ -1,15 +1,24 @@
 ﻿FROM alvisisme/ubuntu:18.04
 
-RUN apt-get update &&\
-  DEBIAN_FRONTEND=noninteractive apt-get -y install \
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    ca-certificates \
+    curl \
     wget \
+    git \
+    zip \
     unzip \
-    python \
-    make &&\
-  rm -rf /var/lib/apt/lists/*
+    autoconf \
+    automake \
+    make \
+    cmake \
+  && apt-get autoremove \
+  && apt-get autoclean \
+  && rm -rf /var/lib/apt/lists/*
 
 ARG ANDROID_NDK_VERSION
 ENV ANDROID_NDK_HOME /android-ndk-${ANDROID_NDK_VERSION}
+ENV ANDROID_NDK_ROOT /android-ndk-${ANDROID_NDK_VERSION}
 ENV PATH ${ANDROID_NDK_HOME}:${PATH}
 
 RUN wget -q https://dl.google.com/android/repository/android-ndk-${ANDROID_NDK_VERSION}-linux.zip && \
